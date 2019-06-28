@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-
 
 import com.chsh.ex.base.BaseActivity;
 import com.chsh.ex.fragment.AFragment;
@@ -20,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class TestActivity extends BaseActivity {
+public class Test2Activity extends BaseActivity {
 
     private EasyNavigationBar navigationBar;
 
@@ -90,7 +88,7 @@ public class TestActivity extends BaseActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false); //隐藏左边标题
         setStatusBarTitleVisable(true);
-        setStatusBarTitle("测试");
+        setStatusBarTitle("测试2");
 
     }
 

@@ -10,14 +10,17 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.chsh.ex.R;
+import com.chsh.ex.utii.ToastUtil;
 import com.chsh.library.swipebacklayout.BGASwipeBackHelper;
 import com.jaeger.library.StatusBarUtil;
 
 public abstract class BaseActivity extends AppCompatActivity implements BGASwipeBackHelper.Delegate , View.OnClickListener{
     protected BGASwipeBackHelper mSwipeBackHelper;
     protected Toolbar mToolbar;
+    protected TextView mToolTitle;
 
     @Override
     public void onCreate( @Nullable Bundle savedInstanceState) {
@@ -30,6 +33,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BGASwipe
 
         initView(savedInstanceState);
         mToolbar = getViewById(R.id.toolbar);
+        mToolTitle =  getViewById(R.id.title);
 
         setListener();
         processLogic(savedInstanceState);
@@ -117,6 +121,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BGASwipe
         setStatusBarColor(color, StatusBarUtil.DEFAULT_STATUS_BAR_ALPHA);
     }
 
+
     /**
      * 设置状态栏颜色
      *
@@ -126,6 +131,40 @@ public abstract class BaseActivity extends AppCompatActivity implements BGASwipe
     public void setStatusBarColor(@ColorInt int color, @IntRange(from = 0, to = 255) int statusBarAlpha) {
         StatusBarUtil.setColorForSwipeBack(this, color, statusBarAlpha);
     }
+
+
+    /**
+     * 设置title是否可显示
+     * @param isvisable
+     */
+    protected void setStatusBarTitleVisable(Boolean isvisable){
+        mToolTitle.setVisibility(isvisable?View.VISIBLE:View.GONE);
+    }
+
+    /**
+     * 设置状态栏标题文本
+     * @param title
+     */
+    protected void setStatusBarTitle(String title){
+        mToolTitle.setText(title);
+    }
+
+    /**
+     * 设置状态栏标题颜色
+     * @param color
+     */
+    protected void setStatusBarTitleColor(@ColorInt int color){
+        mToolTitle.setTextColor(color);
+    }
+
+    /**
+     * 设置状态栏标题文本大小
+     * @param size
+     */
+    protected void setStatusBarTitleSize(float size){
+        mToolTitle.setTextSize(size);
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -186,5 +225,9 @@ public abstract class BaseActivity extends AppCompatActivity implements BGASwipe
         Log.i(this.getClass().getSimpleName(), "onStop");
     }
 
+
+    protected void tost(String message){
+        ToastUtil.showToast(this,message,1000);
+    }
 
 }

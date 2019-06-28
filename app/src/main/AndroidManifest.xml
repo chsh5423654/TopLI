@@ -25,6 +25,10 @@
             android:theme="@style/AppTheme.SwipeBack"
             />
 
+        <activity android:name=".Test2Activity"
+            android:theme="@style/AppTheme.SwipeBack"
+            />
+
     </application>
 
 </manifest>

@@ -2,7 +2,6 @@ package com.chsh.ex;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 
 import com.chsh.ex.base.BaseActivity;
@@ -40,6 +39,11 @@ public class MainActivity extends BaseActivity {
     private void initToolbar() {
         setSupportActionBar(mToolbar);
         setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false); //隐藏左边返回按钮
+        getSupportActionBar().setDisplayShowTitleEnabled(false); //隐藏左边标题
+        setStatusBarTitleVisable(true);
+        setStatusBarTitle("主页");
+
     }
 
 
