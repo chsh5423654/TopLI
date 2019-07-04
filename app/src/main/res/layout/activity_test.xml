@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".modules.main.ui.acitivity.MainActivity">
 
     <include layout="@layout/inc_toolbar" />
 
@@ -17,9 +17,13 @@
         <com.chsh.fragmentlibray.view.EasyNavigationBar
             android:id="@+id/navigationBar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:Easy_addLayoutRule="RULE_CENTER"
+            >
 
         </com.chsh.fragmentlibray.view.EasyNavigationBar>
+
+
 
     </android.support.constraint.ConstraintLayout>
 

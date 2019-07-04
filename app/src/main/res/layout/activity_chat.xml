@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.chsh.ex.modules.chat.views.ChatView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chat_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3f3f3"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/inc_toolbar" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/pull_to_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/chat_input"
+        android:layout_below="@+id/toolbar"
+        >
+
+        <cn.jiguang.imui.messages.MessageList
+            android:id="@+id/msg_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:avatarHeight="48dp"
+            app:avatarWidth="48dp"
+            app:showReceiverDisplayName="true"
+            app:showSenderDisplayName="false"
+            app:avatarRadius="5dp"
+            app:bubbleMaxWidth="0.70"
+            app:dateTextSize="14sp"
+            app:receiveBubblePaddingLeft="16dp"
+            app:receiveBubblePaddingRight="8dp"
+            app:receiveTextColor="#ffffff"
+            app:receiveTextSize="16sp"
+            app:sendBubblePaddingLeft="8dp"
+            app:sendBubblePaddingRight="16dp"
+            app:sendTextColor="#7587A8"
+            app:sendTextSize="16sp" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+    <cn.jiguang.imui.chatinput.ChatInputView
+        android:id="@+id/chat_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:inputEditTextBg="@drawable/input_edit_bg"
+        app:sendBtnBg="@drawable/send_bg"
+        app:sendBtnIcon="@drawable/send_bg"
+        app:sendBtnPressedIcon="@drawable/send_bg"
+        app:inputMarginBottom="@dimen/dp_4"
+        app:inputMarginTop="@dimen/dp_4"
+        app:inputMarginLeft="4dp"
+        app:inputMarginRight="4dp"
+        app:cameraQuality="0.6"
+        app:showSelectAlbum="true"/>
+
+
+</com.chsh.ex.modules.chat.views.ChatView>

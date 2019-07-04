@@ -18,6 +18,16 @@ android {
     }
 }
 
+
+ext {
+    butterknifeVersion = '8.4.0'
+    retrofitVersion = '2.3.0'
+    logginginterceptor = '3.9.1'
+    rxjavaVersion = '2.1.11'
+    rxandroidVersion = "2.0.2"
+    dagger2Version = ""
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
@@ -27,6 +37,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
+    //web
+    implementation "com.just.agentweb:agentweb:4.0.2"
+
     //logger
     implementation 'com.orhanobut:logger:2.2.0'
     implementation project(path: ':library')
@@ -34,4 +47,43 @@ dependencies {
 
     //状态栏
     implementation 'com.jaeger.statusbaruitl:library:1.4.0'
+
+    //注解
+    implementation "com.jakewharton:butterknife:8.8.1"
+    annotationProcessor "com.jakewharton:butterknife-compiler:8.8.1"
+
+    //dagger2
+    implementation "com.google.dagger:dagger:2.17"
+    annotationProcessor "com.google.dagger:dagger-compiler:2.17"
+    implementation "com.google.dagger:dagger-android:2.17"
+    implementation "com.google.dagger:dagger-android-support:2.17"
+    annotationProcessor "com.google.dagger:dagger-android-processor:2.17"
+    implementation "org.glassfish:javax.annotation:10.0-b28"
+
+
+    //retrofit-okhttp-rxjava
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$logginginterceptor"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
+
+    //cookie
+    implementation "com.github.franmontiel:PersistentCookieJar:v1.0.1"
+
+
+    //im chat
+    implementation 'cn.jiguang.imui:messagelist:0.8.0'
+    implementation 'cn.jiguang.imui:chatinput:0.10.0'
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.6.1'
+    //easypermissions
+    implementation 'pub.devrel:easypermissions:0.4.0'
+
+    //刷新加载
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-28'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-28'
+
 }

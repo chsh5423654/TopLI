@@ -434,7 +434,10 @@ public class EasyNavigationBar extends LinearLayout {
 
             @Override
             public void onPageSelected(int i) {
-                onSelectChangeListener.onSelectChangeListener(i);
+                if (onSelectChangeListener!=null){
+                    onSelectChangeListener.onSelectChangeListener(i);
+                }
+
             }
 
             @Override

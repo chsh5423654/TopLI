@@ -427,4 +427,11 @@
     <dimen name="sp_48">48sp</dimen>
     <dimen name="sp_50">50sp</dimen>
 
+
+
+
+
+    <!-- chat 相关 -->
+    <dimen name="chat_title_bar_txt_size">20sp</dimen>
+
 </resources>

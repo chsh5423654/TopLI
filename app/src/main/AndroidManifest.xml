@@ -2,16 +2,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.chsh.ex">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+
     <application
-        android:name=".base.BaseApplication"
+        android:name=".app.TopLiApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        <activity android:name=".modules.main.ui.acitivity.MainActivity"
             android:windowSoftInputMode="stateAlwaysHidden"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             >
             <intent-filter>
@@ -21,13 +31,27 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".TestActivity"
+        <activity android:name=".modules.main.ui.acitivity.TestActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.SwipeBack"
             />
 
-        <activity android:name=".Test2Activity"
+        <activity android:name=".modules.main.ui.acitivity.Test2Activity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.SwipeBack"
             />
+
+        <activity android:name=".modules.chat.ui.acitivity.ChatActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".modules.chat.messages.VideoActivity"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+
+        </activity>
+        <activity android:name=".modules.chat.messages.BrowserImageActivity" />
 
     </application>
 
